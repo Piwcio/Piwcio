@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="98" height="30" viewBox="0 0 98 30" role="img" aria-label="Sophos">
+<title>Sophos</title>
+<defs><clipPath id="c"><rect width="98" height="30" rx="7"/></clipPath><linearGradient id="g" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".24"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
+<g clip-path="url(#c)"><rect width="98" height="30" fill="#18211d"/><path d="M0 0H35L29 30H0Z" fill="#e5ae9e"/><path d="M0 0H35L29 30H0Z" fill="url(#g)"/></g>
+<rect x=".5" y=".5" width="97" height="29" rx="6.5" fill="none" stroke="#e5ae9e" stroke-opacity=".55"/>
+<g transform="translate(6.2 5.5) scale(.7917)" fill="none" stroke="#14201a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3V21C7.7 19.5 4.5 16.1 4.5 11.5V6Z" fill="#14201a" fill-opacity=".35" stroke="none"/><path d="M12 3L19.5 6V11.5C19.5 16.1 16.3 19.5 12 21C7.7 19.5 4.5 16.1 4.5 11.5V6Z"/></g>
+<text x="42" y="19.6" fill="#e9efeb" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="600" textLength="43.6" lengthAdjust="spacing">Sophos</text>
+</svg>

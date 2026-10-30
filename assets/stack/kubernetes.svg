@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="121" height="30" viewBox="0 0 121 30" role="img" aria-label="Kubernetes">
+<title>Kubernetes</title>
+<defs><clipPath id="c"><rect width="121" height="30" rx="7"/></clipPath><linearGradient id="g" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".24"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
+<g clip-path="url(#c)"><rect width="121" height="30" fill="#18211d"/><path d="M0 0H35L29 30H0Z" fill="#b8b2f0"/><path d="M0 0H35L29 30H0Z" fill="url(#g)"/></g>
+<rect x=".5" y=".5" width="120" height="29" rx="6.5" fill="none" stroke="#b8b2f0" stroke-opacity=".55"/>
+<g transform="translate(6.2 5.5) scale(.7917)" fill="none" stroke="#14201a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.79L15.55 5.84V9.94L12 11.99L8.45 9.94V5.84Z" fill="#14201a" fill-opacity=".3"/><path d="M7.25 12.01L10.8 14.06V18.16L7.25 20.21L3.7 18.16V14.06ZM16.75 12.01L20.3 14.06V18.16L16.75 20.21L13.2 18.16V14.06Z"/></g>
+<text x="42" y="19.6" fill="#e9efeb" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="600" textLength="66.6" lengthAdjust="spacing">Kubernetes</text>
+</svg>

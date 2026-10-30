@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="86" height="30" viewBox="0 0 86 30" role="img" aria-label="Linux">
+<title>Linux</title>
+<defs><clipPath id="c"><rect width="86" height="30" rx="7"/></clipPath><linearGradient id="g" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".24"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
+<g clip-path="url(#c)"><rect width="86" height="30" fill="#18211d"/><path d="M0 0H35L29 30H0Z" fill="#c1c989"/><path d="M0 0H35L29 30H0Z" fill="url(#g)"/></g>
+<rect x=".5" y=".5" width="85" height="29" rx="6.5" fill="none" stroke="#c1c989" stroke-opacity=".55"/>
+<g transform="translate(6.2 5.5) scale(.7917)" fill="none" stroke="#14201a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8C9.1 2.8 7.7 5.2 7.7 8.1V9.4C5.8 11.3 4.3 13.8 4.3 16.4C4.3 19.3 7.3 20.8 12 20.8S19.7 19.3 19.7 16.4C19.7 13.8 18.2 11.3 16.3 9.4V8.1C16.3 5.2 14.9 2.8 12 2.8Z" fill="#14201a" stroke="none"/><ellipse cx="12" cy="15.4" rx="3.7" ry="4.4" fill="#c1c989"/><circle cx="10.6" cy="7.2" r="1" fill="#c1c989"/><circle cx="13.4" cy="7.2" r="1" fill="#c1c989"/><path d="M10.8 9.3L12 10.5L13.2 9.3Z" fill="#c1c989" stroke="none"/><path d="M7 21.2H10M14 21.2H17" stroke-width="1.8"/></g>
+<text x="42" y="19.6" fill="#e9efeb" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="600" textLength="31.3" lengthAdjust="spacing">Linux</text>
+</svg>

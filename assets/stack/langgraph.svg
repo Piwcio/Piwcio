@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="119" height="30" viewBox="0 0 119 30" role="img" aria-label="LangGraph">
+<title>LangGraph</title>
+<defs><clipPath id="c"><rect width="119" height="30" rx="7"/></clipPath><linearGradient id="g" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".24"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
+<g clip-path="url(#c)"><rect width="119" height="30" fill="#18211d"/><path d="M0 0H35L29 30H0Z" fill="#d5afdf"/><path d="M0 0H35L29 30H0Z" fill="url(#g)"/></g>
+<rect x=".5" y=".5" width="118" height="29" rx="6.5" fill="none" stroke="#d5afdf" stroke-opacity=".55"/>
+<g transform="translate(6.2 5.5) scale(.7917)" fill="none" stroke="#14201a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="6" r="2.2" fill="#14201a" stroke="none"/><circle cx="18.5" cy="6" r="2.2" fill="#14201a" stroke="none"/><circle cx="12" cy="18.2" r="2.2" fill="#14201a" stroke="none"/><path d="M8.5 6L15.5 6M13.6 4.7L15.5 6L13.6 7.3M17.09 8.65L13.41 15.55M15.45 14.49L13.41 15.55L13.16 13.26M10.59 15.55L6.91 8.65M6.66 10.94L6.91 8.65L8.95 9.71"/></g>
+<text x="42" y="19.6" fill="#e9efeb" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="600" textLength="64.5" lengthAdjust="spacing">LangGraph</text>
+</svg>

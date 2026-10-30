@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="117" height="30" viewBox="0 0 117 30" role="img" aria-label="TypeScript">
+<title>TypeScript</title>
+<defs><clipPath id="c"><rect width="117" height="30" rx="7"/></clipPath><linearGradient id="g" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".24"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
+<g clip-path="url(#c)"><rect width="117" height="30" fill="#18211d"/><path d="M0 0H35L29 30H0Z" fill="#9fd0ae"/><path d="M0 0H35L29 30H0Z" fill="url(#g)"/></g>
+<rect x=".5" y=".5" width="116" height="29" rx="6.5" fill="none" stroke="#9fd0ae" stroke-opacity=".55"/>
+<g transform="translate(6.2 5.5) scale(.7917)" fill="none" stroke="#14201a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7L2.8 12L7 17M17 7L21.2 12L17 17M9 7.5H15M12 7.5V17"/></g>
+<text x="42" y="19.6" fill="#e9efeb" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="600" textLength="62.3" lengthAdjust="spacing">TypeScript</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="143" height="30" viewBox="0 0 143 30" role="img" aria-label="GitHub Copilot">
+<title>GitHub Copilot</title>
+<defs><clipPath id="c"><rect width="143" height="30" rx="7"/></clipPath><linearGradient id="g" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".24"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
+<g clip-path="url(#c)"><rect width="143" height="30" fill="#18211d"/><path d="M0 0H35L29 30H0Z" fill="#d5afdf"/><path d="M0 0H35L29 30H0Z" fill="url(#g)"/></g>
+<rect x=".5" y=".5" width="142" height="29" rx="6.5" fill="none" stroke="#d5afdf" stroke-opacity=".55"/>
+<g transform="translate(6.2 5.5) scale(.7917)" fill="none" stroke="#14201a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 7.5L3.5 12L7.5 16.5M16.5 7.5L20.5 12L16.5 16.5"/><path d="M12 7.8C12.46 11.08 12.92 11.54 16.2 12C12.92 12.46 12.46 12.92 12 16.2C11.54 12.92 11.08 12.46 7.8 12C11.08 11.54 11.54 11.08 12 7.8Z" fill="#14201a" stroke-width="1"/></g>
+<text x="42" y="19.6" fill="#e9efeb" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="600" textLength="88.5" lengthAdjust="spacing">GitHub Copilot</text>
+</svg>

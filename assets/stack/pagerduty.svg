@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="116" height="30" viewBox="0 0 116 30" role="img" aria-label="PagerDuty">
+<title>PagerDuty</title>
+<defs><clipPath id="c"><rect width="116" height="30" rx="7"/></clipPath><linearGradient id="g" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".24"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
+<g clip-path="url(#c)"><rect width="116" height="30" fill="#18211d"/><path d="M0 0H35L29 30H0Z" fill="#e5ae9e"/><path d="M0 0H35L29 30H0Z" fill="url(#g)"/></g>
+<rect x=".5" y=".5" width="115" height="29" rx="6.5" fill="none" stroke="#e5ae9e" stroke-opacity=".55"/>
+<g transform="translate(6.2 5.5) scale(.7917)" fill="none" stroke="#14201a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 16V11.2A5.5 5.5 0 0 1 17.5 11.2V16L19 17.8H5Z"/><path d="M10.2 20.2A1.9 1.9 0 0 0 13.8 20.2"/><path d="M19.3 4.6A6.2 6.2 0 0 1 21.2 9M4.7 4.6A6.2 6.2 0 0 0 2.8 9"/></g>
+<text x="42" y="19.6" fill="#e9efeb" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="600" textLength="62" lengthAdjust="spacing">PagerDuty</text>
+</svg>

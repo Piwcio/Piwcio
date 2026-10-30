@@ -37,7 +37,47 @@ architecture.
 |---|---|---|
 | [piwowarpawel.com](https://piwowarpawel.com/) | My EN/PL portfolio, released like a production service with STAGE checks and an approval before PROD | Astro, TypeScript, Azure Pipelines, Cloudflare Workers |
 | [Career Radar](https://radar.piwowarpawel.com/en/) | An interactive ranking of 63 IT roles in Poland, with market data from the official SOLID.Jobs API refreshed every week | Astro, TypeScript, Azure Pipelines, Cloudflare |
-| HomeLab 3.0 | A lab for the whole path from a reviewed change to a running, observable service. Under construction | VMware Workstation Pro, Terraform, Ansible, k3s, Argo CD, Grafana |
+| [HomeLab 3.0](#homelab-30) | A lab for the whole path from a reviewed change to a running, observable service. Under construction | VMware Workstation Pro, Terraform, Ansible, k3s, Argo CD, Grafana |
+
+## HomeLab 3.0
+
+My old lab had around 30 Hyper-V VMs. It taught me a lot about Windows, Linux and infrastructure,
+but too much of it depended on manual setup. So I cleared it out and started again with a clearer
+goal.
+
+HomeLab 3.0 is a smaller platform for DevOps, SRE, platform engineering and AI-assisted
+operations. Deploy a service, watch it, break it on purpose, recover it and rebuild it from code.
+Preferably without a notebook full of mystery settings.
+
+VMware Workstation Pro is the foundation. Azure DevOps Services and self-hosted Linux agents are
+coming together as the delivery path. Kubernetes, GitOps, wider observability and the local AI
+platform come next, and each part goes in only after testing. The whole lab is still under
+construction.
+
+| Layer | Tools | What it's for |
+|---|---|---|
+| Foundation | VMware Workstation Pro, Linux, Windows | Guest machines for networking, deployments and recovery practice |
+| Delivery | Azure DevOps Services, self-hosted Linux agents | A repeatable path from a reviewed change to a deployment |
+| Infrastructure as code | Terraform, Bicep, Ansible | Definitions in Git, so nothing has to be rebuilt from memory |
+| Platform | Kubernetes, k3s, Argo CD | Deployments, configuration drift, rollback and rebuilding a cluster |
+| Visibility | Grafana, Prometheus, VictoriaMetrics, VictoriaLogs, Alloy, OpenTelemetry | Understanding a failure and checking the recovery |
+| Local AI | Local LLMs, LangGraph, Qdrant, Neo4j | My own platform for agents, retrieval and experiments |
+
+The local AI part is planned around one path.
+
+<p align="center"><code>gather context</code> → <code>retrieve</code> → <code>propose</code> → <code>review</code> → <code>run</code> → <code>observe</code></p>
+
+Qdrant is there to find the relevant material, Neo4j to map how systems relate to their context
+and LangGraph to connect the steps with a local model. The design puts a dry-run and my approval
+in front of anything destructive, and OpenTelemetry with Grafana should show what every step did.
+
+The lab is also where I practise CI/CD and GitOps deployments, deliberate failures, rollback and
+recovery drills, SRE scenarios and hardening, all at a scale I can fully understand. There will
+probably be a few broken clusters along the way. 🙂
+
+The [HomeLab page](https://piwowarpawel.com/homelab/) has the architecture diagram, and
+[the rebuild story](https://piwowarpawel.com/articles/homelab-3-rebuild/) explains why I started
+over. The code lives in the private `homelab-platform` repository.
 
 ## Private repositories
 
@@ -54,13 +94,91 @@ mirrors each repository to a private copy on GitHub.
 This profile works the same way. It is edited in Azure DevOps and a pipeline publishes it here
 after every change.
 
-## Stack
+## Tech stack
 
+<!-- stack:start -->
 <p>
-  <img src="https://skillicons.dev/icons?i=azure,terraform,ansible,grafana,prometheus,docker,kubernetes,linux,bash,powershell,git,cloudflare,astro,ts&perline=14" alt="Azure, Terraform, Ansible, Grafana, Prometheus, Docker, Kubernetes, Linux, Bash, PowerShell, Git, Cloudflare, Astro, TypeScript">
+<b>Cloud &amp; virtualisation</b><br>
+<img src="assets/stack/microsoft-azure.svg" alt="Microsoft Azure">
+<img src="assets/stack/ionos-cloud.svg" alt="IONOS Cloud">
+<img src="assets/stack/vmware-vsphere-vcenter.svg" alt="VMware vSphere · vCenter">
 </p>
 
-Also IONOS, VMware vCenter, Bicep, Azure DevOps, VictoriaLogs, Alloy, Entra ID, n8n and PagerDuty.
+<p>
+<b>Automation &amp; delivery</b><br>
+<img src="assets/stack/terraform.svg" alt="Terraform">
+<img src="assets/stack/ansible.svg" alt="Ansible">
+<img src="assets/stack/azure-devops.svg" alt="Azure DevOps">
+<img src="assets/stack/azure-bicep.svg" alt="Azure Bicep">
+<img src="assets/stack/bash.svg" alt="Bash">
+<img src="assets/stack/powershell.svg" alt="PowerShell">
+<img src="assets/stack/python.svg" alt="Python">
+<img src="assets/stack/jenkins.svg" alt="Jenkins">
+<img src="assets/stack/github-actions.svg" alt="GitHub Actions">
+</p>
+
+<p>
+<b>Observability</b><br>
+<img src="assets/stack/grafana.svg" alt="Grafana">
+<img src="assets/stack/prometheus.svg" alt="Prometheus">
+<img src="assets/stack/victoriametrics.svg" alt="VictoriaMetrics">
+<img src="assets/stack/victorialogs.svg" alt="VictoriaLogs">
+<img src="assets/stack/grafana-alloy.svg" alt="Grafana Alloy">
+<img src="assets/stack/loki.svg" alt="Loki">
+<img src="assets/stack/tempo.svg" alt="Tempo">
+<img src="assets/stack/opentelemetry.svg" alt="OpenTelemetry">
+<img src="assets/stack/checkmk.svg" alt="Checkmk">
+<img src="assets/stack/site24x7.svg" alt="Site24x7">
+</p>
+
+<p>
+<b>Containers &amp; GitOps</b><br>
+<img src="assets/stack/kubernetes.svg" alt="Kubernetes">
+<img src="assets/stack/docker.svg" alt="Docker">
+<img src="assets/stack/git.svg" alt="Git">
+<img src="assets/stack/argo-cd.svg" alt="Argo CD">
+</p>
+
+<p>
+<b>Systems &amp; operations</b><br>
+<img src="assets/stack/linux.svg" alt="Linux">
+<img src="assets/stack/windows-server.svg" alt="Windows Server">
+<img src="assets/stack/active-directory.svg" alt="Active Directory">
+<img src="assets/stack/postgresql-mysql-mariadb.svg" alt="PostgreSQL · MySQL · MariaDB">
+</p>
+
+<p>
+<b>Identity, security &amp; ITSM</b><br>
+<img src="assets/stack/microsoft-entra-id.svg" alt="Microsoft Entra ID">
+<img src="assets/stack/jira-service-management.svg" alt="Jira Service Management">
+<img src="assets/stack/pagerduty.svg" alt="PagerDuty">
+<img src="assets/stack/opnsense.svg" alt="OPNsense">
+<img src="assets/stack/sophos.svg" alt="Sophos">
+<img src="assets/stack/cisco-networking.svg" alt="Cisco networking">
+</p>
+
+<p>
+<b>AI &amp; workflow engineering</b><br>
+<img src="assets/stack/claude.svg" alt="Claude">
+<img src="assets/stack/chatgpt.svg" alt="ChatGPT">
+<img src="assets/stack/github-copilot.svg" alt="GitHub Copilot">
+<img src="assets/stack/n8n.svg" alt="n8n">
+<img src="assets/stack/open-webui.svg" alt="Open WebUI">
+<img src="assets/stack/openrouter.svg" alt="OpenRouter">
+<img src="assets/stack/local-llms.svg" alt="Local LLMs">
+<img src="assets/stack/langgraph.svg" alt="LangGraph">
+<img src="assets/stack/qdrant.svg" alt="Qdrant">
+</p>
+
+<p>
+<b>Web projects</b><br>
+<img src="assets/stack/astro.svg" alt="Astro">
+<img src="assets/stack/typescript.svg" alt="TypeScript">
+<img src="assets/stack/cloudflare.svg" alt="Cloudflare">
+</p>
+<!-- stack:end -->
+
+<sub>Icons drawn for this profile. Levels and details for every tool are on <a href="https://piwowarpawel.com/#stack">piwowarpawel.com</a>.</sub>
 
 ## Certifications and learning
 

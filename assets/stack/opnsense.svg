@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="114" height="30" viewBox="0 0 114 30" role="img" aria-label="OPNsense">
+<title>OPNsense</title>
+<defs><clipPath id="c"><rect width="114" height="30" rx="7"/></clipPath><linearGradient id="g" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".24"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
+<g clip-path="url(#c)"><rect width="114" height="30" fill="#18211d"/><path d="M0 0H35L29 30H0Z" fill="#e5ae9e"/><path d="M0 0H35L29 30H0Z" fill="url(#g)"/></g>
+<rect x=".5" y=".5" width="113" height="29" rx="6.5" fill="none" stroke="#e5ae9e" stroke-opacity=".55"/>
+<g transform="translate(6.2 5.5) scale(.7917)" fill="none" stroke="#14201a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="1.6"/><path d="M3 9.5H21M3 14.5H21M12 4.5V9.5M7.5 9.5V14.5M16.5 9.5V14.5M12 14.5V19.5"/></g>
+<text x="42" y="19.6" fill="#e9efeb" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="600" textLength="59.9" lengthAdjust="spacing">OPNsense</text>
+</svg>

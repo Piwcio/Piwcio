@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="30" viewBox="0 0 150 30" role="img" aria-label="Windows Server">
+<title>Windows Server</title>
+<defs><clipPath id="c"><rect width="150" height="30" rx="7"/></clipPath><linearGradient id="g" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".24"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
+<g clip-path="url(#c)"><rect width="150" height="30" fill="#18211d"/><path d="M0 0H35L29 30H0Z" fill="#c1c989"/><path d="M0 0H35L29 30H0Z" fill="url(#g)"/></g>
+<rect x=".5" y=".5" width="149" height="29" rx="6.5" fill="none" stroke="#c1c989" stroke-opacity=".55"/>
+<g transform="translate(6.2 5.5) scale(.7917)" fill="none" stroke="#14201a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="6.5" y="3" width="11" height="18" rx="2"/><path d="M9.5 7H14.5M9.5 10H14.5"/><circle cx="12" cy="16.4" r="1.4" fill="#14201a" stroke="none"/></g>
+<text x="42" y="19.6" fill="#e9efeb" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="600" textLength="95.2" lengthAdjust="spacing">Windows Server</text>
+</svg>

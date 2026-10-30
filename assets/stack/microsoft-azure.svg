@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="148" height="30" viewBox="0 0 148 30" role="img" aria-label="Microsoft Azure">
+<title>Microsoft Azure</title>
+<defs><clipPath id="c"><rect width="148" height="30" rx="7"/></clipPath><linearGradient id="g" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".24"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
+<g clip-path="url(#c)"><rect width="148" height="30" fill="#18211d"/><path d="M0 0H35L29 30H0Z" fill="#93c5fd"/><path d="M0 0H35L29 30H0Z" fill="url(#g)"/></g>
+<rect x=".5" y=".5" width="147" height="29" rx="6.5" fill="none" stroke="#93c5fd" stroke-opacity=".55"/>
+<g transform="translate(6.2 5.5) scale(.7917)" fill="none" stroke="#14201a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18.2A4 4 0 0 1 6.4 10.25A6 6 0 0 1 17.6 9.3A4.5 4.5 0 0 1 17.5 18.2Z"/><path d="M9.6 15.6L12 12.3L14.4 15.6"/></g>
+<text x="42" y="19.6" fill="#e9efeb" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="13" font-weight="600" textLength="94" lengthAdjust="spacing">Microsoft Azure</text>
+</svg>
