@@ -1,0 +1,80 @@
+# Publishes this profile to github.com/Piwcio/Piwcio after every change on main.
+# Azure DevOps stays the source of truth; only main is pushed, so draft branches stay private.
+parameters:
+  - name: dryRun
+    displayName: Preview changes without pushing
+    type: boolean
+    default: false
+
+trigger:
+  branches:
+    include:
+      - main
+
+pr: none
+
+pool:
+  vmImage: ubuntu-latest
+
+lockBehavior: sequential
+
+variables:
+  - group: github-mirroring
+
+steps:
+  - checkout: self
+    clean: true
+    fetchDepth: 0
+    fetchTags: false
+    persistCredentials: true
+
+  - bash: |
+      set -euo pipefail
+      export GIT_TERMINAL_PROMPT=0
+
+      if [[ "$BUILD_SOURCEBRANCH" != "refs/heads/main" ]]; then
+        echo "This pipeline must run from main." >&2
+        exit 1
+      fi
+
+      # The Azure DevOps repository name differs from the GitHub profile repository name.
+      case "$ADO_REPOSITORY_NAME" in
+        github-profile) github_repo=Piwcio ;;
+        *)
+          echo "Unsupported source repository." >&2
+          exit 1
+          ;;
+      esac
+
+      git fetch --no-tags origin '+refs/heads/main:refs/mirror/main'
+      github_url="https://github.com/Piwcio/${github_repo}.git"
+
+      github_auth=$(printf 'x-access-token:%s' "$GITHUB_MIRROR_TOKEN" | base64 -w 0)
+      export GIT_CONFIG_COUNT=1
+      export GIT_CONFIG_KEY_0='http.https://github.com/.extraheader'
+      export GIT_CONFIG_VALUE_0="AUTHORIZATION: basic $github_auth"
+      trap 'unset GIT_CONFIG_VALUE_0 github_auth GITHUB_MIRROR_TOKEN' EXIT
+
+      push_options=()
+      if [[ "${DRY_RUN,,}" == "true" ]]; then
+        push_options+=(--dry-run)
+      fi
+      git -c http.followRedirects=false push "${push_options[@]}" "$github_url" '+refs/mirror/main:refs/heads/main'
+
+      if [[ "${DRY_RUN,,}" == "true" ]]; then
+        echo "Preview complete. GitHub was not changed."
+        exit 0
+      fi
+
+      expected=$(git rev-parse refs/mirror/main)
+      actual=$(git -c http.followRedirects=false ls-remote "$github_url" refs/heads/main | awk '{print $1}')
+      if [[ "$expected" != "$actual" ]]; then
+        echo "GitHub main does not match Azure DevOps main." >&2
+        exit 1
+      fi
+      echo "Verified: GitHub main matches Azure DevOps main ($expected)."
+    displayName: Publish main to the GitHub profile repository
+    env:
+      GITHUB_MIRROR_TOKEN: $(GITHUB_MIRROR_TOKEN)
+      ADO_REPOSITORY_NAME: $(Build.Repository.Name)
+      DRY_RUN: ${{ parameters.dryRun }}
