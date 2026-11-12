@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="https://piwowarpawel.com/">piwowarpawel.com</a> ·
-  <a href="https://radar.piwowarpawel.com/en/">Career Radar</a> ·
+  <a href="https://itrolerank.com/">IT Role Rank</a> ·
   <a href="https://www.linkedin.com/in/pawelpiwowar88/">LinkedIn</a> ·
   <a href="https://www.credly.com/users/pawel-piwowar.56832a3a/badges/credly">Credly</a> ·
   <a href="https://learn.microsoft.com/en-us/users/pawepiwowar/transcript/vn6rwsyj1lqylkq">Microsoft Learn</a>
@@ -36,7 +36,7 @@ architecture.
 | Project | What it is | Built with |
 |---|---|---|
 | [piwowarpawel.com](https://piwowarpawel.com/) | My EN/PL portfolio, released like a production service with STAGE checks and an approval before PROD | Astro, TypeScript, Azure Pipelines, Cloudflare Workers |
-| [Career Radar](https://radar.piwowarpawel.com/en/) | An interactive ranking of 63 IT roles in Poland, with market data from the official SOLID.Jobs API refreshed every week | Astro, TypeScript, Azure Pipelines, Cloudflare |
+| [IT Role Rank](https://itrolerank.com/) | An interactive ranking of 73 IT roles in Poland, with market data from the official SOLID.Jobs API refreshed every week | Astro, TypeScript, Azure Pipelines, Cloudflare |
 | [HomeLab 3.0](#homelab-30) | A lab for the whole path from a reviewed change to a running, observable service. Under construction | VMware Workstation Pro, Terraform, Ansible, k3s, Argo CD, Grafana |
 
 ## HomeLab 3.0
@@ -87,7 +87,7 @@ mirrors each repository to a private copy on GitHub.
 | Repository | Purpose |
 |---|---|
 | `personal-website` | piwowarpawel.com, the code-generated CV and the delivery pipelines |
-| `career-radar` | Career Radar, its weekly SOLID.Jobs harvest and its pipelines |
+| `itrolerank` | IT Role Rank (itrolerank.com), its weekly SOLID.Jobs harvest and its pipelines |
 | `homelab-platform` | HomeLab 3.0 infrastructure, configuration and automation |
 | `pawel-ai-context` | A knowledge base about my work that I give to AI assistants |
 
