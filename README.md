@@ -1,98 +1,73 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
-  <img src="assets/banner-light.svg" alt="Paweł Piwowar, Cloud DevOps Engineer. Cloud. Code. Curiosity." width="100%">
+  <img src="assets/banner-light.svg" alt="Paweł Piwowar, Cloud DevOps Engineer. An illustrated board shows Grafana, Terraform and n8n." width="100%">
 </picture>
 
 <p align="center">
   <a href="https://piwowarpawel.com/">piwowarpawel.com</a> ·
+  <a href="https://piwowarpawel.com/cv/">CV</a> ·
   <a href="https://itrolerank.com/">IT Role Rank</a> ·
   <a href="https://www.linkedin.com/in/pawelpiwowar88/">LinkedIn</a> ·
   <a href="https://www.credly.com/users/pawel-piwowar.56832a3a/badges/credly">Credly</a> ·
   <a href="https://learn.microsoft.com/en-us/users/pawepiwowar/transcript/vn6rwsyj1lqylkq">Microsoft Learn</a>
 </p>
 
-## Hi, I'm Paweł 👋
+## Hi, I'm Paweł
 
-Self-taught, I went from PC building and IT support to DevOps. These days that means Azure, IONOS
-and VMware, infrastructure as code, automating repeatable work and making sure the logs help when
-something breaks. Next on my path are platform engineering, AI infrastructure and cloud
-architecture.
+It started with the Amiga. I'm self-taught. I went from building PCs to IT support, then worked as a
+SysAdmin before moving into DevOps.
+
+Today I work with Azure, IONOS Cloud and VMware. I build infrastructure, automate repeatable work
+and make sure the logs help when something breaks. I'm learning more about platform engineering,
+AI infrastructure and cloud architecture.
 
 ## What I work on
 
-- **Hybrid cloud.** 80+ cloud subscriptions and 1,000+ virtual machines in the environment I work
-  with, together with 15+ teams.
-- **Infrastructure as code.** Terraform, Ansible and Bicep in Git, with around 70% of provisioning
-  automated.
-- **Observability.** A Grafana stack I built and run, with 50 dashboards as code and millions of
-  log lines a day in VictoriaLogs.
-- **Migrations.** Co-led a production move from VMware vCenter to Azure and IONOS, and now driving
-  a second, larger one.
-- **AI-assisted engineering.** Claude, ChatGPT and Copilot for code, reviews and documentation,
-  with every change reviewed before it ships.
+The professional projects below are anonymised.
 
-## Projects
+- **[Grafana stack](https://piwowarpawel.com/projects/observability-platform/)**. I built and run
+  the stack with my own collectors and 50 dashboards as code. VictoriaLogs stores millions of log
+  lines a day. My Grafana plugin fork uses OpenRouter to help analyse the connected data sources.
+- **[vCenter to Azure and IONOS Cloud](https://piwowarpawel.com/projects/hybrid-cloud-migration/)**.
+  I co-led the migration. We scripted the VM moves and imported the cloud resources into Terraform.
+- **[IONOS Cloud as code](https://piwowarpawel.com/projects/ionos-infrastructure-as-code/)**.
+  We bring existing environments under Terraform and deploy new ones from code. Ansible handles
+  VM configuration, patching and access.
+- **[n8n platform](https://piwowarpawel.com/projects/infrastructure-automation/)**. I'm the global
+  admin. I maintain the containers and plugins and monitor workflow runs across teams. I built
+  multiple Ops workflows with AI support, including alert-to-ticket automation and recurring reports.
+
+## Personal projects
 
 | Project | What it is | Built with |
 |---|---|---|
-| [piwowarpawel.com](https://piwowarpawel.com/) | My EN/PL portfolio, released like a production service with STAGE checks and an approval before PROD | Astro, TypeScript, Azure Pipelines, Cloudflare Workers |
-| [IT Role Rank](https://itrolerank.com/) | An interactive ranking of 73 IT roles in Poland, with market data from the official SOLID.Jobs API refreshed every week | Astro, TypeScript, Azure Pipelines, Cloudflare |
-| [HomeLab 3.0](#homelab-30) | A lab for the whole path from a reviewed change to a running, observable service. Under construction | VMware Workstation Pro, Terraform, Ansible, k3s, Argo CD, Grafana |
+| [piwowarpawel.com](https://piwowarpawel.com/) | My EN/PL portfolio and technical notes, with [STAGE checks and production approval](https://piwowarpawel.com/projects/personal-website/) | Astro, TypeScript, Azure Pipelines, Cloudflare Workers |
+| [IT Role Rank](https://itrolerank.com/) | 73 IT roles in Poland with adjustable weights. Job-ad data from SOLID.Jobs and BlueLionJob, salary context from No Fluff Jobs reports. [Methodology](https://itrolerank.com/methodology/) | Astro, TypeScript, Azure Pipelines, Cloudflare Workers |
+| [HomeLab 3.0](#homelab-30) | Where I practise deploying, monitoring and rebuilding services, and test local LLMs | VMware Workstation Pro, Terraform, Ansible, Azure DevOps, Grafana |
 
 ## HomeLab 3.0
 
-My old lab had around 30 Hyper-V VMs. It taught me a lot about Windows, Linux and infrastructure,
-but too much of it depended on manual setup. So I cleared it out and started again with a clearer
-goal.
+My old lab had around 30 Hyper-V VMs. I rebuilt it to practise the whole cycle. Deploy a service,
+watch it, break it on purpose and recover it from code. Preferably without a notebook full of
+mystery settings.
 
-HomeLab 3.0 is a smaller platform for DevOps, SRE, platform engineering and AI-assisted
-operations. Deploy a service, watch it, break it on purpose, recover it and rebuild it from code.
-Preferably without a notebook full of mystery settings.
+The rebuild runs on VMware Workstation Pro. Terraform and Ansible live in Git, and Azure DevOps
+pipelines run on a self-hosted agent. Grafana monitors the lab VMs and the uptime of my sites.
+Prometheus for metrics, VictoriaLogs for logs, Alloy for collection.
 
-VMware Workstation Pro is the foundation. Azure DevOps Services and self-hosted Linux agents are
-coming together as the delivery path. Kubernetes, GitOps, wider observability and the local AI
-platform come next, and each part goes in only after testing. The whole lab is still under
-construction.
+I'm testing local Qwen models for code completion in VS Code, infrastructure changes and analysis
+in Grafana. I review the changes before they go through the pipeline. The lab is still under
+construction. k3s and Argo CD are on the roadmap, along with a workflow using LangGraph, Qdrant
+and Neo4j to give the models context and keep a review step before any change runs.
 
-| Layer | Tools | What it's for |
-|---|---|---|
-| Foundation | VMware Workstation Pro, Linux, Windows | Guest machines for networking, deployments and recovery practice |
-| Delivery | Azure DevOps Services, self-hosted Linux agents | A repeatable path from a reviewed change to a deployment |
-| Infrastructure as code | Terraform, Bicep, Ansible | Definitions in Git, so nothing has to be rebuilt from memory |
-| Platform | Kubernetes, k3s, Argo CD | Deployments, configuration drift, rollback and rebuilding a cluster |
-| Visibility | Grafana, Prometheus, VictoriaMetrics, VictoriaLogs, Alloy, OpenTelemetry | Understanding a failure and checking the recovery |
-| Local AI | Local LLMs, LangGraph, Qdrant, Neo4j | My own platform for agents, retrieval and experiments |
+The [HomeLab page](https://piwowarpawel.com/homelab/) has the architecture. I wrote about
+[why I started over](https://piwowarpawel.com/articles/homelab-3-rebuild/) and
+[how I use local LLMs in the lab](https://piwowarpawel.com/articles/local-llms-and-homelab-as-code/).
 
-The local AI part is planned around one path.
+## Where the code lives
 
-<p align="center"><code>gather context</code> → <code>retrieve</code> → <code>propose</code> → <code>review</code> → <code>run</code> → <code>observe</code></p>
-
-Qdrant is there to find the relevant material, Neo4j to map how systems relate to their context
-and LangGraph to connect the steps with a local model. The design puts a dry-run and my approval
-in front of anything destructive, and OpenTelemetry with Grafana should show what every step did.
-
-The lab is also where I practise CI/CD and GitOps deployments, deliberate failures, rollback and
-recovery drills, SRE scenarios and hardening, all at a scale I can fully understand. There will
-probably be a few broken clusters along the way. 🙂
-
-The [HomeLab page](https://piwowarpawel.com/homelab/) has the architecture diagram, and
-[the rebuild story](https://piwowarpawel.com/articles/homelab-3-rebuild/) explains why I started
-over. The code lives in the private `homelab-platform` repository.
-
-## Private repositories
-
-My code lives in Azure DevOps. Changes go through pull requests and pipelines there, and a pipeline
-mirrors each repository to a private copy on GitHub.
-
-| Repository | Purpose |
-|---|---|
-| `personal-website` | piwowarpawel.com, the code-generated CV and the delivery pipelines |
-| `itrolerank` | IT Role Rank (itrolerank.com), its weekly SOLID.Jobs harvest and its pipelines |
-| `homelab-platform` | HomeLab 3.0 infrastructure, configuration and automation |
-| `pawel-ai-context` | A knowledge base about my work that I give to AI assistants |
-
-This profile works the same way. It is edited in Azure DevOps and a pipeline publishes it here
-after every change.
+I work in Azure Repos and use Azure Pipelines for validation and delivery. My personal projects
+have private GitHub mirrors. A pipeline publishes this profile README to GitHub from Azure Repos.
 
 ## Tech stack
 
@@ -190,5 +165,3 @@ after every change.
 | 🎓 EC-Council EHE, NDE and Cybersecurity Attacks and Defense Strategies · May 2024 | [EC-Council certificate](https://codered.eccouncil.org/certificate/d47e65ea-7f8d-4862-b566-086dc633f284) |
 | ⏳ In progress | AZ-400, AZ-401, AZ-305 |
 | 🧭 On the roadmap | CKA, Terraform Associate |
-
-<sub>Edited in Azure DevOps and mirrored here by a pipeline. Facts match piwowarpawel.com.</sub>
