@@ -1,6 +1,6 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
-  <img src="assets/banner-light.svg" alt="Paweł Piwowar, Cloud DevOps Engineer. An illustrated board shows Grafana, Terraform and n8n." width="100%">
+  <img src="assets/banner-light.svg" alt="Paweł Piwowar, Cloud DevOps Engineer. An illustrated board shows Grafana, Terraform, n8n, Azure, IONOS Cloud and local Qwen models." width="100%">
 </picture>
 
 <p align="center">

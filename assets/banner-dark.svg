@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="336" viewBox="0 0 1200 336" role="img" aria-labelledby="title description">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="495" viewBox="0 0 1200 495" role="img" aria-labelledby="title description">
   <title id="title">Paweł Piwowar · Cloud DevOps Engineer</title>
-  <desc id="description">From Amiga and PC building through IT support and system administration to DevOps. An illustrated board shows Grafana metrics, Terraform and a workflow that routes an alert to a ticket in n8n.</desc>
+  <desc id="description">From Amiga and PC building through IT support and system administration to DevOps. A board shows Grafana metrics, Terraform, n8n alert routing, Azure Bicep provisioning, IONOS Cloud virtual machines and local Qwen models.</desc>
   <style>
     svg {
       --background: #1b2420;
@@ -13,6 +13,7 @@
       --sage: #9fd0ae;
       --blue: #adc9e1;
       --warm: #dfc49a;
+      --lavender: #c8b9df;
     }
 
     text { font-family: Inter, 'Segoe UI', -apple-system, 'Helvetica Neue', Arial, sans-serif; fill: var(--text); }
@@ -26,11 +27,25 @@
     .caption { font-size: 15px; fill: var(--muted); }
     .step { font-size: 16px; font-weight: 600; }
     .packet { fill: var(--sage); opacity: 0; }
+    .diagram-label { font-size: 14px; font-weight: 600; }
+    .azure-panel { --panel-accent: var(--blue); }
+    .ionos-panel { --panel-accent: var(--sage); --edge-delay: -3s; }
+    .llm-panel { --panel-accent: var(--lavender); --edge-delay: -6s; }
+    .panel-edge { fill: none; stroke: var(--panel-accent); stroke-width: 2.2; stroke-linecap: round; stroke-dasharray: 14 86; opacity: 0; }
+    .azure-trace { fill: none; stroke: var(--blue); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 12 60; opacity: 0; }
+    .vm-status { fill: var(--sage); opacity: .55; }
+    .model-token { opacity: .85; }
 
     @media (prefers-reduced-motion: no-preference) {
       .signal { animation: scroll-signal 12s linear infinite; }
       .packet { animation: route-alert 7s linear infinite; }
       .to-ticket { animation-delay: 2.2s; }
+      .panel-edge { opacity: .85; animation: trace-panel-edge 9s linear infinite; animation-delay: var(--edge-delay, 0s); }
+      .azure-trace { animation: provision-resources 7s linear infinite; }
+      .vm-status { animation: vm-ready 8s ease-in-out infinite; }
+      .model-token { animation: model-output 8s ease-in-out infinite; }
+      .second { animation-delay: .7s; }
+      .third { animation-delay: 1.4s; }
     }
 
     @keyframes scroll-signal {
@@ -41,6 +56,27 @@
       0%, 8% { opacity: 0; transform: translateX(0); }
       14%, 33% { opacity: 1; }
       40%, 100% { opacity: 0; transform: translateX(21px); }
+    }
+
+    @keyframes trace-panel-edge {
+      from { stroke-dashoffset: 100; }
+      to { stroke-dashoffset: 0; }
+    }
+
+    @keyframes provision-resources {
+      0%, 12% { stroke-dashoffset: 12; opacity: 0; }
+      18%, 49% { opacity: 1; }
+      56%, 100% { stroke-dashoffset: -52; opacity: 0; }
+    }
+
+    @keyframes vm-ready {
+      0%, 10%, 60%, 100% { opacity: .55; }
+      26%, 45% { opacity: 1; }
+    }
+
+    @keyframes model-output {
+      0%, 8%, 100% { opacity: .22; }
+      25%, 83% { opacity: 1; }
     }
   </style>
 
@@ -66,11 +102,15 @@
     <path id="metric" d="M0 43C15 43 21 51 36 50S58 30 75 37S96 44 111 31S128 12 147 20S169 41 186 31S205 9 223 17S247 39 263 37S278 43 288 43"/>
     <path id="logs" d="M0 57C15 57 20 61 36 59S55 48 73 52S95 58 111 50S132 39 147 44S165 56 183 52S203 38 221 42S245 55 262 54S276 57 288 57"/>
     <path id="metric-area" d="M0 43C15 43 21 51 36 50S58 30 75 37S96 44 111 31S128 12 147 20S169 41 186 31S205 9 223 17S247 39 263 37S278 43 288 43V68H0Z"/>
+    <g id="vm-slot">
+      <rect width="65" height="24" rx="5" fill="var(--surface)" stroke="var(--border)"/>
+      <path d="M11 9H38M11 15H31" fill="none" stroke="var(--sage)" stroke-opacity=".65" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
   </defs>
 
-  <rect width="1200" height="336" rx="22" fill="url(#backdrop)"/>
-  <rect width="1200" height="336" rx="22" fill="url(#dots)"/>
-  <rect x=".5" y=".5" width="1199" height="335" rx="21.5" fill="none" stroke="var(--border)"/>
+  <rect width="1200" height="495" rx="22" fill="url(#backdrop)"/>
+  <rect width="1200" height="495" rx="22" fill="url(#dots)"/>
+  <rect x=".5" y=".5" width="1199" height="494" rx="21.5" fill="none" stroke="var(--border)"/>
 
   <g transform="translate(55 43) scale(.84)">
     <rect x=".75" y=".75" width="62.5" height="62.5" rx="10" fill="var(--surface)" stroke="var(--border)" stroke-width="1.5"/>
@@ -141,5 +181,62 @@
     <text x="821" y="256">Alert</text>
     <text x="948" y="256">Route</text>
     <text x="1075" y="256">Ticket</text>
+  </g>
+
+  <g class="azure-panel" transform="translate(54 316)">
+    <rect class="panel" width="356" height="137" rx="15"/>
+    <rect class="panel-edge" width="356" height="137" rx="15" pathLength="100"/>
+    <path d="M19 0H54" stroke="var(--panel-accent)" stroke-width="2" stroke-linecap="round"/>
+    <text x="19" y="35" class="heading">Azure</text>
+    <text x="19" y="58" class="caption">Infrastructure as code</text>
+    <rect class="tile" x="19" y="75" width="91" height="44" rx="9"/>
+    <rect class="tile" x="166" y="75" width="171" height="44" rx="9"/>
+    <g fill="none" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M33 87H43L48 92V107H33ZM43 87V92H48M37 97H44M37 102H42"/>
+      <path d="M110 97H160M155 92L160 97L155 102" opacity=".55"/>
+      <rect x="180" y="88" width="17" height="18" rx="3"/>
+      <path d="M184 94H193M184 100H191"/>
+      <path d="M253 97H260V91H266M260 97V103H266"/>
+      <circle cx="251" cy="97" r="2"/><circle cx="268" cy="91" r="2"/><circle cx="268" cy="103" r="2"/>
+    </g>
+    <path class="azure-trace" d="M112 97H158"/>
+    <g class="diagram-label">
+      <text x="57" y="102">Bicep</text>
+      <text x="205" y="102">VM</text>
+      <text x="279" y="102">VNet</text>
+    </g>
+  </g>
+
+  <g class="ionos-panel" transform="translate(422 316)">
+    <rect class="panel" width="356" height="137" rx="15"/>
+    <rect class="panel-edge" width="356" height="137" rx="15" pathLength="100"/>
+    <path d="M19 0H54" stroke="var(--panel-accent)" stroke-width="2" stroke-linecap="round"/>
+    <text x="19" y="35" class="heading">IONOS Cloud</text>
+    <text x="19" y="58" class="caption">Terraform and Ansible</text>
+    <rect class="tile" x="19" y="75" width="318" height="44" rx="9"/>
+    <path d="M104 97H250" fill="none" stroke="var(--sage)" stroke-opacity=".48" stroke-width="1.5" stroke-dasharray="3 4"/>
+    <use href="#vm-slot" x="44" y="85"/><use href="#vm-slot" x="145" y="85"/><use href="#vm-slot" x="246" y="85"/>
+    <circle class="vm-status" cx="97" cy="97" r="3"/>
+    <circle class="vm-status second" cx="198" cy="97" r="3"/>
+    <circle class="vm-status third" cx="299" cy="97" r="3"/>
+  </g>
+
+  <g class="llm-panel" transform="translate(790 316)">
+    <rect class="panel" width="356" height="137" rx="15"/>
+    <rect class="panel-edge" width="356" height="137" rx="15" pathLength="100"/>
+    <path d="M19 0H54" stroke="var(--panel-accent)" stroke-width="2" stroke-linecap="round"/>
+    <text x="19" y="35" class="heading">Local LLMs</text>
+    <text x="19" y="58" class="caption">Qwen in the HomeLab</text>
+    <rect class="tile" x="19" y="75" width="318" height="44" rx="9"/>
+    <g fill="none" stroke="var(--lavender)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M36 90L42 96L36 102M55 92H69M55 103H64"/>
+      <path class="model-token" d="M77 92H108M72 103H98"/>
+      <path class="model-token second" d="M116 92H143M106 103H134"/>
+      <path class="model-token third" d="M151 92H178M142 103H161"/>
+      <path d="M201 97H265" stroke-dasharray="3 4" opacity=".5"/>
+      <rect x="274" y="85" width="24" height="24" rx="4" stroke-width="1.5"/>
+      <rect x="280" y="91" width="12" height="12" rx="2" stroke-width="1.5"/>
+      <path d="M280 82V85M286 82V85M292 82V85M280 109V112M286 109V112M292 109V112M271 91H274M271 97H274M271 103H274M298 91H301M298 97H301M298 103H301" stroke-width="1.5"/>
+    </g>
   </g>
 </svg>
