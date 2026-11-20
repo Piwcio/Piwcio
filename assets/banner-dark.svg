@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="495" viewBox="0 0 1200 495" role="img" aria-labelledby="title description">
   <title id="title">Paweł Piwowar · Cloud DevOps Engineer</title>
-  <desc id="description">From Amiga and PC building through IT support and system administration to DevOps. A board shows Grafana metrics, Terraform, n8n alert routing, Azure Bicep provisioning, IONOS Cloud virtual machines and local Qwen models.</desc>
+  <desc id="description">From Amiga and PC building through IT support and system administration to DevOps. A board shows Grafana, Terraform, n8n, Azure Bicep, IONOS Cloud and four local models on an RTX 5080: Gemma 4, North Mini Code, Mellum and Bielik. Whisper and Granite are planned for voice control.</desc>
   <style>
     svg {
       --background: #1b2420;
@@ -34,7 +34,11 @@
     .panel-edge { fill: none; stroke: var(--panel-accent); stroke-width: 2.2; stroke-linecap: round; stroke-dasharray: 14 86; opacity: 0; }
     .azure-trace { fill: none; stroke: var(--blue); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 12 60; opacity: 0; }
     .vm-status { fill: var(--sage); opacity: .55; }
-    .model-token { opacity: .85; }
+    .model-edge { fill: none; stroke: var(--model-accent); stroke-width: 1.5; stroke-linecap: round; stroke-dasharray: 35 100; opacity: 0; }
+    .model-name { font-size: 12.5px; font-weight: 650; }
+    .model-role { font-size: 10px; fill: var(--muted); }
+    .voice-label { font-size: 11px; fill: var(--muted); }
+    .voice-model { font-size: 11.5px; font-weight: 600; }
 
     @media (prefers-reduced-motion: no-preference) {
       .signal { animation: scroll-signal 12s linear infinite; }
@@ -43,7 +47,7 @@
       .panel-edge { opacity: .85; animation: trace-panel-edge 9s linear infinite; animation-delay: var(--edge-delay, 0s); }
       .azure-trace { animation: provision-resources 7s linear infinite; }
       .vm-status { animation: vm-ready 8s ease-in-out infinite; }
-      .model-token { animation: model-output 8s ease-in-out infinite; }
+      .model-edge { animation: trace-model-edge 6s linear infinite; animation-delay: var(--model-delay, 0s); }
       .second { animation-delay: .7s; }
       .third { animation-delay: 1.4s; }
     }
@@ -74,9 +78,10 @@
       26%, 45% { opacity: 1; }
     }
 
-    @keyframes model-output {
-      0%, 8%, 100% { opacity: .22; }
-      25%, 83% { opacity: 1; }
+    @keyframes trace-model-edge {
+      0% { stroke-dashoffset: 135; opacity: 0; }
+      4%, 17% { opacity: 1; }
+      24%, 100% { stroke-dashoffset: 0; opacity: 0; }
     }
   </style>
 
@@ -222,21 +227,39 @@
   </g>
 
   <g class="llm-panel" transform="translate(790 316)">
-    <rect class="panel" width="356" height="137" rx="15"/>
-    <rect class="panel-edge" width="356" height="137" rx="15" pathLength="100"/>
+    <rect class="panel" width="356" height="165" rx="15"/>
+    <rect class="panel-edge" width="356" height="165" rx="15" pathLength="100"/>
     <path d="M19 0H54" stroke="var(--panel-accent)" stroke-width="2" stroke-linecap="round"/>
     <text x="19" y="35" class="heading">Local LLMs</text>
-    <text x="19" y="58" class="caption">Qwen in the HomeLab</text>
-    <rect class="tile" x="19" y="75" width="318" height="44" rx="9"/>
-    <g fill="none" stroke="var(--lavender)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M36 90L42 96L36 102M55 92H69M55 103H64"/>
-      <path class="model-token" d="M77 92H108M72 103H98"/>
-      <path class="model-token second" d="M116 92H143M106 103H134"/>
-      <path class="model-token third" d="M151 92H178M142 103H161"/>
-      <path d="M201 97H265" stroke-dasharray="3 4" opacity=".5"/>
-      <rect x="274" y="85" width="24" height="24" rx="4" stroke-width="1.5"/>
-      <rect x="280" y="91" width="12" height="12" rx="2" stroke-width="1.5"/>
-      <path d="M280 82V85M286 82V85M292 82V85M280 109V112M286 109V112M292 109V112M271 91H274M271 97H274M271 103H274M298 91H301M298 97H301M298 103H301" stroke-width="1.5"/>
+    <text x="19" y="56" class="caption">Running on an RTX 5080</text>
+    <g class="local-model" transform="translate(19 66)" style="--model-accent: var(--lavender)">
+      <rect class="tile" width="155" height="27" rx="5"/>
+      <rect class="model-edge" width="155" height="27" rx="5" pathLength="100"/>
+      <text class="model-name" x="8" y="12.5">Gemma 4 26B-A4B</text>
+      <text class="model-role" x="8" y="23">Main model</text>
+    </g>
+    <g class="local-model" transform="translate(182 66)" style="--model-accent: var(--sage); --model-delay: 1.5s">
+      <rect class="tile" width="155" height="27" rx="5"/>
+      <rect class="model-edge" width="155" height="27" rx="5" pathLength="100"/>
+      <text class="model-name" x="8" y="12.5">North Mini Code 1.0</text>
+      <text class="model-role" x="8" y="23">Second candidate</text>
+    </g>
+    <g class="local-model" transform="translate(19 97)" style="--model-accent: var(--blue); --model-delay: 3s">
+      <rect class="tile" width="155" height="27" rx="5"/>
+      <rect class="model-edge" width="155" height="27" rx="5" pathLength="100"/>
+      <text class="model-name" x="8" y="12.5">Mellum 4B</text>
+      <text class="model-role" x="8" y="23">VS Code autocomplete</text>
+    </g>
+    <g class="local-model" transform="translate(182 97)" style="--model-accent: var(--warm); --model-delay: 4.5s">
+      <rect class="tile" width="155" height="27" rx="5"/>
+      <rect class="model-edge" width="155" height="27" rx="5" pathLength="100"/>
+      <text class="model-name" x="8" y="12.5">Bielik 11B</text>
+      <text class="model-role" x="8" y="23">Polish questions and notes</text>
+    </g>
+    <g class="voice-models">
+      <text class="voice-label" x="19" y="138">Voice control · planned</text>
+      <text class="voice-model" x="19" y="152">Whisper large-v3-turbo</text>
+      <text class="voice-model" x="182" y="152">Granite 4.2 8B</text>
     </g>
   </g>
 </svg>

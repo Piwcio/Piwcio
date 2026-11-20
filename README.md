@@ -1,6 +1,6 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
-  <img src="assets/banner-light.svg" alt="Paweł Piwowar, Cloud DevOps Engineer. An illustrated board shows Grafana, Terraform, n8n, Azure, IONOS Cloud and local Qwen models." width="100%">
+  <img src="assets/banner-light.svg" alt="Paweł Piwowar, Cloud DevOps Engineer. A board shows Grafana, Terraform, n8n, Azure, IONOS Cloud and the local models Gemma 4, North Mini Code, Mellum and Bielik. Whisper and Granite are planned for voice control." width="100%">
 </picture>
 
 <p align="center">
@@ -55,10 +55,17 @@ The rebuild runs on VMware Workstation Pro. Terraform and Ansible live in Git, a
 pipelines run on a self-hosted agent. Grafana monitors the lab VMs and the uptime of my sites.
 Prometheus for metrics, VictoriaLogs for logs, Alloy for collection.
 
-I'm testing local Qwen models for code completion in VS Code, infrastructure changes and analysis
-in Grafana. I review the changes before they go through the pipeline. The lab is still under
-construction. k3s and Argo CD are on the roadmap, along with a workflow using LangGraph, Qdrant
-and Neo4j to give the models context and keep a review step before any change runs.
+I'm testing local models on an RTX 5080 with 16 GB of VRAM. Gemma 4 26B-A4B is my first pick for
+Terraform, Ansible and figuring out what broke. North Mini Code 1.0 gets a go at the same jobs.
+Mellum 4B for autocomplete in VS Code, Bielik 11B for notes and questions in Polish.
+
+For bigger changes or a second opinion on architecture, I ask Claude Opus or GPT Sol. The Grafana
+assistant still uses Claude or GPT. I'm trying a local model there too, so logs and metrics can
+stay in the lab. I review the code in a PR before the pipeline runs.
+
+Still on the list. k3s, Argo CD, LangGraph with Qdrant and Neo4j for context. And talking to the
+lab through a Meta Quest 3. Whisper large-v3-turbo for speech to text, Granite 4.2 8B to turn
+that into a command. I'd confirm it in the headset before anything runs.
 
 The [HomeLab page](https://piwowarpawel.com/homelab/) has the architecture. I wrote about
 [why I started over](https://piwowarpawel.com/articles/homelab-3-rebuild/) and
